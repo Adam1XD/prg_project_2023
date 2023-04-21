@@ -103,7 +103,7 @@ namespace prg_project_2023
             AddWorkTypeForm addWorkType = new();
             var result = addWorkType.ShowDialog();
             if (result == DialogResult.OK)
-                LoadEmployee();
+                LoadWorkType();
         }
 
         private void btnDeleteWorkType_Click(object sender, EventArgs e)

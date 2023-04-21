@@ -112,7 +112,7 @@
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(1334, 409);
+            btnLogout.Location = new Point(1360, 409);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(75, 23);
             btnLogout.TabIndex = 10;
@@ -196,7 +196,7 @@
             listViewWorkType.GridLines = true;
             listViewWorkType.Location = new Point(999, 35);
             listViewWorkType.Name = "listViewWorkType";
-            listViewWorkType.Size = new Size(410, 368);
+            listViewWorkType.Size = new Size(436, 368);
             listViewWorkType.TabIndex = 15;
             listViewWorkType.UseCompatibleStateImageBehavior = false;
             listViewWorkType.View = View.Details;
@@ -257,7 +257,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1420, 439);
+            ClientSize = new Size(1447, 439);
             Controls.Add(btnDeleteWorkType);
             Controls.Add(btnCreateWorkType);
             Controls.Add(listViewWorkType);

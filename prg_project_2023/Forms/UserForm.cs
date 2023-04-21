@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.Logging;
 using prg_project_2023.Classes;
+using prg_project_2023.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,6 +60,24 @@ namespace prg_project_2023
 
         private void txtSearchWorkType_TextChanged(object sender, EventArgs e)
         {
+            LoadWorkType();
+        }
+
+        private void btnCreateWorkType_Click(object sender, EventArgs e)
+        {
+            AddWorkTypeForm addWorkType = new();
+            var result = addWorkType.ShowDialog();
+            if (result == DialogResult.OK)
+                LoadWorkType();
+        }
+
+        private void btnDeleteWorkType_Click(object sender, EventArgs e)
+        {
+            var row = listViewWorkType.SelectedItems[0];
+            var id = row.SubItems[0].Text;
+            sqlRepo.DeleteWorkType(Convert.ToInt32(id));
+            listViewWorkType.SelectedItems[0].Remove();
+
             LoadWorkType();
         }
     }

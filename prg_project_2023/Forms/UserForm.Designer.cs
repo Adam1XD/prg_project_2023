@@ -45,6 +45,8 @@
             columnHeader3 = new ColumnHeader();
             txtSearchWorkType = new TextBox();
             label3 = new Label();
+            btnDeleteWorkType = new Button();
+            btnCreateWorkType = new Button();
             SuspendLayout();
             // 
             // label1
@@ -122,9 +124,9 @@
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(12, 10);
             label2.Name = "label2";
-            label2.Size = new Size(133, 21);
+            label2.Size = new Size(44, 21);
             label2.TabIndex = 4;
-            label2.Text = "Employees Data";
+            label2.Text = "User";
             // 
             // listViewWorkType
             // 
@@ -170,11 +172,33 @@
             label3.TabIndex = 16;
             label3.Text = "Search in WorkType:";
             // 
+            // btnDeleteWorkType
+            // 
+            btnDeleteWorkType.Location = new Point(1142, 11);
+            btnDeleteWorkType.Name = "btnDeleteWorkType";
+            btnDeleteWorkType.Size = new Size(75, 23);
+            btnDeleteWorkType.TabIndex = 20;
+            btnDeleteWorkType.Text = "Delete";
+            btnDeleteWorkType.UseVisualStyleBackColor = true;
+            btnDeleteWorkType.Click += btnDeleteWorkType_Click;
+            // 
+            // btnCreateWorkType
+            // 
+            btnCreateWorkType.Location = new Point(1061, 12);
+            btnCreateWorkType.Name = "btnCreateWorkType";
+            btnCreateWorkType.Size = new Size(75, 23);
+            btnCreateWorkType.TabIndex = 19;
+            btnCreateWorkType.Text = "Create";
+            btnCreateWorkType.UseVisualStyleBackColor = true;
+            btnCreateWorkType.Click += btnCreateWorkType_Click;
+            // 
             // UserForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 445);
+            Controls.Add(btnDeleteWorkType);
+            Controls.Add(btnCreateWorkType);
             Controls.Add(listViewWorkType);
             Controls.Add(txtSearchWorkType);
             Controls.Add(label3);
@@ -208,5 +232,7 @@
         private ColumnHeader columnHeader3;
         private TextBox txtSearchWorkType;
         private Label label3;
+        private Button btnDeleteWorkType;
+        private Button btnCreateWorkType;
     }
 }

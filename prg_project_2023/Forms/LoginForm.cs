@@ -27,7 +27,8 @@ namespace prg_project_2023
 
             if (user != null)
             {
-                if (user.Role == "Admin")
+                this.Hide();
+                if (user.Role == "admin")
                 {
                     AdminForm adminFrm = new AdminForm(user);
                     adminFrm.Show();
@@ -36,8 +37,7 @@ namespace prg_project_2023
                 else
                 {
                     new UserForm().Show();
-                }
-                this.Hide();
+                } 
             }
             else
             {

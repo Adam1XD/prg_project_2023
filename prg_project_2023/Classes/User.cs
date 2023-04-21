@@ -11,12 +11,14 @@ namespace prg_project_2023.Classes
     {
         public int Id { get; }
         public string Username { get; }
+        public string Password { get; }
         public string Role { get; set; }
 
-        public User(int id, string username, string role)
+        public User(int id, string username, string password, string role)
         {
             Id = id;
             Username = username;
+            Password = password;
             Role = role;
         }
 

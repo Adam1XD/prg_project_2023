@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -11,7 +11,7 @@ namespace prg_project_2023.Classes
 {
     internal class SqlRepo
     {
-        private string connectionString = "@";
+        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=PrgProject;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
         public void RegisterUser(string username, string password)
         {
@@ -36,14 +36,14 @@ namespace prg_project_2023.Classes
                 sqlConnection.Open();
                 using (SqlCommand cmd = sqlConnection.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT * FROM [User] WHERE Username=@username AND Password=@password";
+                    cmd.CommandText = "SELECT * FROM [Users] WHERE Username=@username AND Password=@password";
                     cmd.Parameters.AddWithValue("username", username);
                     cmd.Parameters.AddWithValue("password", password);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            user = new User((int)reader["Id"], reader["Username"].ToString(), reader["Password"].ToString());
+                            user = new User((int)reader["Id"], reader["Username"].ToString(), reader["Password"].ToString(), reader["Role"].ToString());
                         }
                     }
                 }
@@ -84,13 +84,13 @@ namespace prg_project_2023.Classes
                 sqlConnection.Open();
                 using (SqlCommand cmd = sqlConnection.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT * FROM [User] WHERE USERNAME LIKE @search";
+                    cmd.CommandText = "SELECT * FROM [Users] WHERE USERNAME LIKE @search";
                     cmd.Parameters.AddWithValue("search", "%" + search + "%");
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            var user = new User((int)reader["Id"], reader["Username"].ToString(), (string)reader["Role"]);
+                            var user = new User((int)reader["Id"], reader["Username"].ToString(), reader["Password"].ToString(), (string)reader["Role"]);
                             users.Add(user);
                         }
                     }
@@ -106,7 +106,7 @@ namespace prg_project_2023.Classes
                 sqlConnection.Open();
                 using (SqlCommand cmd = sqlConnection.CreateCommand())
                 {
-                    cmd.CommandText = "INSERT INTO [Employee] (Firstname, Lastname, BirthDate, Email, Phone) values(@position,@firstname,@lastname,@date,@email,@phone)";
+                    cmd.CommandText = "INSERT INTO [Employee] (Firstname, Lastname, BirthDate, Email, Phone) values (@firstname,@lastname,@date,@email,@phone)";
                     cmd.Parameters.AddWithValue("firstname", firstname);
                     cmd.Parameters.AddWithValue("lastname", lastname);
                     cmd.Parameters.AddWithValue("date", Convert.ToDateTime(date));
@@ -139,7 +139,7 @@ namespace prg_project_2023.Classes
                 sqlConnection.Open();
                 using (SqlCommand cmd = sqlConnection.CreateCommand())
                 {
-                    cmd.CommandText = "SELECT * FROM [WorkType] WHERE NAME LIKE @search";
+                    cmd.CommandText = "SELECT * FROM [WorkType] WHERE Name LIKE @search";
                     cmd.Parameters.AddWithValue("@search", "%" + search + "%");
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -161,7 +161,7 @@ namespace prg_project_2023.Classes
                 sqlConnection.Open();
                 using (SqlCommand cmd = sqlConnection.CreateCommand())
                 {
-                    cmd.CommandText = "INSERT INTO [Employee] (Name, Descriptione) values(@name,@description)";
+                    cmd.CommandText = "INSERT INTO [WorkType] (Name, Description) values(@name,@description)";
                     cmd.Parameters.AddWithValue("name", name);
                     cmd.Parameters.AddWithValue("description", description);
                     cmd.ExecuteNonQuery();
