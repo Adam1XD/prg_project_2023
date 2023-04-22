@@ -37,6 +37,8 @@ namespace prg_project_2023
                 txtConPassword.Text = "";
 
                 MessageBox.Show("Your account has been SUCCESSFULLY CREATED.", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new LoginForm().Show();
+                this.Close();
             }
             else
             {

@@ -20,7 +20,7 @@ namespace prg_project_2023.Classes
                 sqlConnection.Open();
                 using (SqlCommand cmd = sqlConnection.CreateCommand())
                 {
-                    cmd.CommandText = "INSERT INTO [Users] (Username,Password) values(@username,@password)";
+                    cmd.CommandText = "INSERT INTO [Users] (Username, Password, Role) values (@username, @password, 'user')";
                     cmd.Parameters.AddWithValue("username", username);
                     cmd.Parameters.AddWithValue("password", password);
                     cmd.ExecuteNonQuery();

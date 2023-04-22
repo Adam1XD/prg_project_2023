@@ -14,7 +14,7 @@ namespace prg_project_2023
 {
     public partial class LoginForm : Form
     {
-        private readonly SqlRepo sqlRepo = new SqlRepo();
+        private readonly SqlRepo sqlRepo = new();
 
         public LoginForm()
         {
@@ -37,7 +37,7 @@ namespace prg_project_2023
                 else
                 {
                     new UserForm().Show();
-                } 
+                }
             }
             else
             {
