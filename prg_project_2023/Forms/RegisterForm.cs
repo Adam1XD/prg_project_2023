@@ -24,7 +24,7 @@ namespace prg_project_2023
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (txtUsename.Text == "" && txtPassword.Text == "" && txtConPassword.Text == "")
+            if (txtUsename.Text == "" || txtPassword.Text == "" || txtConPassword.Text == "")
             {
                 MessageBox.Show("Username and Password fields are empty.", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
