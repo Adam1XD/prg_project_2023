@@ -1,6 +1,6 @@
 ﻿namespace prg_project_2023.Forms
 {
-    partial class AddWorkTypeForm
+    partial class UpdateWorkTypeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,85 +34,105 @@
             txtName = new TextBox();
             txtDescription = new TextBox();
             btnCancel = new Button();
-            btnAddWorkType = new Button();
+            btnUpdateWorkType = new Button();
+            label4 = new Label();
+            txtId = new TextBox();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(32, 40);
+            label2.Location = new Point(29, 76);
             label2.Name = "label2";
             label2.Size = new Size(42, 15);
-            label2.TabIndex = 51;
+            label2.TabIndex = 58;
             label2.Text = "Name:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(11, 69);
+            label3.Location = new Point(1, 105);
             label3.Name = "label3";
             label3.Size = new Size(70, 15);
-            label3.TabIndex = 52;
+            label3.TabIndex = 59;
             label3.Text = "Description:";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(52, 9);
+            label1.Location = new Point(36, 9);
             label1.Name = "label1";
-            label1.Size = new Size(122, 21);
-            label1.TabIndex = 50;
-            label1.Text = "Add WorkType";
+            label1.Size = new Size(147, 21);
+            label1.TabIndex = 57;
+            label1.Text = "Update WorkType";
             // 
             // txtName
             // 
-            txtName.Location = new Point(80, 37);
+            txtName.Location = new Point(77, 73);
             txtName.Name = "txtName";
             txtName.Size = new Size(130, 23);
-            txtName.TabIndex = 43;
+            txtName.TabIndex = 53;
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(80, 66);
+            txtDescription.Location = new Point(77, 102);
             txtDescription.Name = "txtDescription";
             txtDescription.Size = new Size(130, 23);
-            txtDescription.TabIndex = 44;
+            txtDescription.TabIndex = 54;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(150, 95);
+            btnCancel.Location = new Point(147, 131);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(60, 23);
-            btnCancel.TabIndex = 49;
+            btnCancel.TabIndex = 56;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
-            // btnAddWorkType
+            // btnUpdateWorkType
             // 
-            btnAddWorkType.Location = new Point(80, 95);
-            btnAddWorkType.Name = "btnAddWorkType";
-            btnAddWorkType.Size = new Size(60, 23);
-            btnAddWorkType.TabIndex = 48;
-            btnAddWorkType.Text = "Add";
-            btnAddWorkType.UseVisualStyleBackColor = true;
-            btnAddWorkType.Click += btnAddWorkType_Click;
+            btnUpdateWorkType.Location = new Point(77, 131);
+            btnUpdateWorkType.Name = "btnUpdateWorkType";
+            btnUpdateWorkType.Size = new Size(60, 23);
+            btnUpdateWorkType.TabIndex = 55;
+            btnUpdateWorkType.Text = "Update";
+            btnUpdateWorkType.UseVisualStyleBackColor = true;
+            btnUpdateWorkType.Click += btnUpdateWorkType_Click;
             // 
-            // AddWorkTypeForm
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(51, 47);
+            label4.Name = "label4";
+            label4.Size = new Size(20, 15);
+            label4.TabIndex = 61;
+            label4.Text = "Id:";
+            // 
+            // txtId
+            // 
+            txtId.Location = new Point(77, 44);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(130, 23);
+            txtId.TabIndex = 60;
+            // 
+            // UpdateWorkTypeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(234, 128);
+            ClientSize = new Size(218, 166);
+            Controls.Add(label4);
+            Controls.Add(txtId);
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(txtName);
             Controls.Add(txtDescription);
             Controls.Add(btnCancel);
-            Controls.Add(btnAddWorkType);
-            Name = "AddWorkTypeForm";
-            Text = "AddWorkTypeForm";
+            Controls.Add(btnUpdateWorkType);
+            Name = "UpdateWorkTypeForm";
+            Text = "UpdateWorkTypeForm";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -125,6 +145,8 @@
         private TextBox txtName;
         private TextBox txtDescription;
         private Button btnCancel;
-        private Button btnAddWorkType;
+        private Button btnUpdateWorkType;
+        private Label label4;
+        private TextBox txtId;
     }
 }

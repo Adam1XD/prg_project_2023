@@ -114,45 +114,45 @@
             label2.AutoSize = true;
             label2.Location = new Point(12, 40);
             label2.Name = "label2";
-            label2.Size = new Size(64, 15);
+            label2.Size = new Size(67, 15);
             label2.TabIndex = 38;
-            label2.Text = "First Name";
+            label2.Text = "First Name:";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(13, 69);
             label3.Name = "label3";
-            label3.Size = new Size(63, 15);
+            label3.Size = new Size(66, 15);
             label3.TabIndex = 39;
-            label3.Text = "Last Name";
+            label3.Text = "Last Name:";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(35, 127);
             label5.Name = "label5";
-            label5.Size = new Size(41, 15);
+            label5.Size = new Size(44, 15);
             label5.TabIndex = 40;
-            label5.Text = "E-mail";
+            label5.Text = "E-mail:";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Location = new Point(17, 101);
             label7.Name = "label7";
-            label7.Size = new Size(59, 15);
+            label7.Size = new Size(62, 15);
             label7.TabIndex = 42;
-            label7.Text = "Birth Date";
+            label7.Text = "Birth Date:";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Location = new Point(35, 156);
             label6.Name = "label6";
-            label6.Size = new Size(41, 15);
+            label6.Size = new Size(44, 15);
             label6.TabIndex = 41;
-            label6.Text = "Phone";
+            label6.Text = "Phone:";
             // 
             // AddEmployeeForm
             // 

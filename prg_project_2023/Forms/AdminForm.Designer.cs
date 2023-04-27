@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            txtSearchEmployee = new TextBox();
-            txtSearchUser = new TextBox();
-            btnCreateEmployee = new Button();
-            btnDeleteEmployee = new Button();
-            btnLogout = new Button();
+            btnDeleteWorkType = new Button();
+            btnCreateWorkType = new Button();
+            listViewWorkType = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            txtSearchWorkType = new TextBox();
+            label3 = new Label();
+            listViewUsers = new ListView();
+            UserId = new ColumnHeader();
+            UserName = new ColumnHeader();
+            UserRole = new ColumnHeader();
             listViewEmployees = new ListView();
             EmployeeId = new ColumnHeader();
             EmployeeFirstName = new ColumnHeader();
@@ -42,93 +47,118 @@
             EmployeeBirthDate = new ColumnHeader();
             EmployeeEmail = new ColumnHeader();
             EmployeePhone = new ColumnHeader();
-            listViewUsers = new ListView();
-            UserId = new ColumnHeader();
-            UserName = new ColumnHeader();
-            UserRole = new ColumnHeader();
-            listViewWorkType = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
-            txtSearchWorkType = new TextBox();
-            label3 = new Label();
-            btnCreateWorkType = new Button();
-            btnDeleteWorkType = new Button();
+            btnLogout = new Button();
+            btnDeleteEmployee = new Button();
+            btnCreateEmployee = new Button();
+            txtSearchUser = new TextBox();
+            txtSearchEmployee = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            label4 = new Label();
+            btnUpdateWorkType = new Button();
+            btnUpdateEmployees = new Button();
+            btnUpdateUser = new Button();
             SuspendLayout();
             // 
-            // label1
+            // btnDeleteWorkType
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(89, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Search in Users:";
+            btnDeleteWorkType.Location = new Point(1325, 48);
+            btnDeleteWorkType.Name = "btnDeleteWorkType";
+            btnDeleteWorkType.Size = new Size(75, 23);
+            btnDeleteWorkType.TabIndex = 31;
+            btnDeleteWorkType.Text = "Delete";
+            btnDeleteWorkType.UseVisualStyleBackColor = true;
+            btnDeleteWorkType.Click += btnDeleteWorkType_Click;
             // 
-            // label2
+            // btnCreateWorkType
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(423, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(118, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Search in Employees:";
+            btnCreateWorkType.Location = new Point(1244, 49);
+            btnCreateWorkType.Name = "btnCreateWorkType";
+            btnCreateWorkType.Size = new Size(75, 23);
+            btnCreateWorkType.TabIndex = 30;
+            btnCreateWorkType.Text = "Create";
+            btnCreateWorkType.UseVisualStyleBackColor = true;
+            btnCreateWorkType.Click += btnCreateWorkType_Click;
             // 
-            // txtSearchEmployee
+            // listViewWorkType
             // 
-            txtSearchEmployee.Location = new Point(547, 6);
-            txtSearchEmployee.Name = "txtSearchEmployee";
-            txtSearchEmployee.Size = new Size(100, 23);
-            txtSearchEmployee.TabIndex = 2;
-            txtSearchEmployee.TextChanged += txtSearchEmployee_TextChanged;
+            listViewWorkType.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            listViewWorkType.FullRowSelect = true;
+            listViewWorkType.GridLines = true;
+            listViewWorkType.Location = new Point(966, 78);
+            listViewWorkType.Name = "listViewWorkType";
+            listViewWorkType.Size = new Size(515, 368);
+            listViewWorkType.TabIndex = 29;
+            listViewWorkType.UseCompatibleStateImageBehavior = false;
+            listViewWorkType.View = View.Details;
             // 
-            // txtSearchUser
+            // columnHeader1
             // 
-            txtSearchUser.Location = new Point(107, 6);
-            txtSearchUser.Name = "txtSearchUser";
-            txtSearchUser.Size = new Size(129, 23);
-            txtSearchUser.TabIndex = 3;
-            txtSearchUser.TextChanged += txtSearchUser_TextChanged;
+            columnHeader1.Text = "Id";
+            columnHeader1.Width = 75;
             // 
-            // btnCreateEmployee
+            // columnHeader2
             // 
-            btnCreateEmployee.Location = new Point(653, 6);
-            btnCreateEmployee.Name = "btnCreateEmployee";
-            btnCreateEmployee.Size = new Size(75, 23);
-            btnCreateEmployee.TabIndex = 4;
-            btnCreateEmployee.Text = "Create";
-            btnCreateEmployee.UseVisualStyleBackColor = true;
-            btnCreateEmployee.Click += btnCreateEmployee_Click;
+            columnHeader2.Text = "Name";
+            columnHeader2.Width = 150;
             // 
-            // btnDeleteEmployee
+            // columnHeader3
             // 
-            btnDeleteEmployee.Location = new Point(734, 6);
-            btnDeleteEmployee.Name = "btnDeleteEmployee";
-            btnDeleteEmployee.Size = new Size(75, 23);
-            btnDeleteEmployee.TabIndex = 5;
-            btnDeleteEmployee.Text = "Delete";
-            btnDeleteEmployee.UseVisualStyleBackColor = true;
-            btnDeleteEmployee.Click += btnDeleteEmployee_Click;
+            columnHeader3.Text = "Description";
+            columnHeader3.Width = 280;
             // 
-            // btnLogout
+            // txtSearchWorkType
             // 
-            btnLogout.Location = new Point(1360, 409);
-            btnLogout.Name = "btnLogout";
-            btnLogout.Size = new Size(75, 23);
-            btnLogout.TabIndex = 10;
-            btnLogout.Text = "Logout";
-            btnLogout.UseVisualStyleBackColor = true;
-            btnLogout.Click += btnLogout_Click;
+            txtSearchWorkType.Location = new Point(1085, 49);
+            txtSearchWorkType.Name = "txtSearchWorkType";
+            txtSearchWorkType.Size = new Size(153, 23);
+            txtSearchWorkType.TabIndex = 28;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(966, 52);
+            label3.Name = "label3";
+            label3.Size = new Size(113, 15);
+            label3.TabIndex = 27;
+            label3.Text = "Search in WorkType:";
+            // 
+            // listViewUsers
+            // 
+            listViewUsers.Columns.AddRange(new ColumnHeader[] { UserId, UserName, UserRole });
+            listViewUsers.FullRowSelect = true;
+            listViewUsers.GridLines = true;
+            listViewUsers.Location = new Point(12, 78);
+            listViewUsers.Name = "listViewUsers";
+            listViewUsers.Size = new Size(386, 368);
+            listViewUsers.TabIndex = 26;
+            listViewUsers.UseCompatibleStateImageBehavior = false;
+            listViewUsers.View = View.Details;
+            // 
+            // UserId
+            // 
+            UserId.Text = "Id";
+            UserId.Width = 75;
+            // 
+            // UserName
+            // 
+            UserName.Text = "Name";
+            UserName.Width = 150;
+            // 
+            // UserRole
+            // 
+            UserRole.Text = "Role";
+            UserRole.Width = 150;
             // 
             // listViewEmployees
             // 
             listViewEmployees.Columns.AddRange(new ColumnHeader[] { EmployeeId, EmployeeFirstName, EmployeeSurname, EmployeeBirthDate, EmployeeEmail, EmployeePhone });
             listViewEmployees.FullRowSelect = true;
             listViewEmployees.GridLines = true;
-            listViewEmployees.Location = new Point(423, 35);
+            listViewEmployees.Location = new Point(404, 78);
             listViewEmployees.Name = "listViewEmployees";
             listViewEmployees.Size = new Size(556, 368);
-            listViewEmployees.TabIndex = 11;
+            listViewEmployees.TabIndex = 25;
             listViewEmployees.UseCompatibleStateImageBehavior = false;
             listViewEmployees.View = View.Details;
             // 
@@ -162,102 +192,116 @@
             EmployeePhone.Text = "Phone";
             EmployeePhone.Width = 100;
             // 
-            // listViewUsers
+            // btnLogout
             // 
-            listViewUsers.Columns.AddRange(new ColumnHeader[] { UserId, UserName, UserRole });
-            listViewUsers.FullRowSelect = true;
-            listViewUsers.GridLines = true;
-            listViewUsers.Location = new Point(12, 35);
-            listViewUsers.Name = "listViewUsers";
-            listViewUsers.Size = new Size(386, 368);
-            listViewUsers.TabIndex = 12;
-            listViewUsers.UseCompatibleStateImageBehavior = false;
-            listViewUsers.View = View.Details;
+            btnLogout.Location = new Point(1406, 452);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(75, 23);
+            btnLogout.TabIndex = 24;
+            btnLogout.Text = "Logout";
+            btnLogout.UseVisualStyleBackColor = true;
             // 
-            // UserId
+            // btnDeleteEmployee
             // 
-            UserId.Text = "Id";
-            UserId.Width = 75;
+            btnDeleteEmployee.Location = new Point(744, 49);
+            btnDeleteEmployee.Name = "btnDeleteEmployee";
+            btnDeleteEmployee.Size = new Size(75, 23);
+            btnDeleteEmployee.TabIndex = 23;
+            btnDeleteEmployee.Text = "Delete";
+            btnDeleteEmployee.UseVisualStyleBackColor = true;
+            btnDeleteEmployee.Click += btnDeleteEmployee_Click;
             // 
-            // UserName
+            // btnCreateEmployee
             // 
-            UserName.Text = "Name";
-            UserName.Width = 150;
+            btnCreateEmployee.Location = new Point(663, 49);
+            btnCreateEmployee.Name = "btnCreateEmployee";
+            btnCreateEmployee.Size = new Size(75, 23);
+            btnCreateEmployee.TabIndex = 22;
+            btnCreateEmployee.Text = "Create";
+            btnCreateEmployee.UseVisualStyleBackColor = true;
+            btnCreateEmployee.Click += btnCreateEmployee_Click;
             // 
-            // UserRole
+            // txtSearchUser
             // 
-            UserRole.Text = "Role";
-            UserRole.Width = 150;
+            txtSearchUser.Location = new Point(107, 49);
+            txtSearchUser.Name = "txtSearchUser";
+            txtSearchUser.Size = new Size(129, 23);
+            txtSearchUser.TabIndex = 21;
             // 
-            // listViewWorkType
+            // txtSearchEmployee
             // 
-            listViewWorkType.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
-            listViewWorkType.FullRowSelect = true;
-            listViewWorkType.GridLines = true;
-            listViewWorkType.Location = new Point(999, 35);
-            listViewWorkType.Name = "listViewWorkType";
-            listViewWorkType.Size = new Size(436, 368);
-            listViewWorkType.TabIndex = 15;
-            listViewWorkType.UseCompatibleStateImageBehavior = false;
-            listViewWorkType.View = View.Details;
+            txtSearchEmployee.Location = new Point(528, 49);
+            txtSearchEmployee.Name = "txtSearchEmployee";
+            txtSearchEmployee.Size = new Size(129, 23);
+            txtSearchEmployee.TabIndex = 20;
             // 
-            // columnHeader1
+            // label2
             // 
-            columnHeader1.Text = "Id";
-            columnHeader1.Width = 75;
+            label2.AutoSize = true;
+            label2.Location = new Point(404, 52);
+            label2.Name = "label2";
+            label2.Size = new Size(118, 15);
+            label2.TabIndex = 19;
+            label2.Text = "Search in Employees:";
             // 
-            // columnHeader2
+            // label1
             // 
-            columnHeader2.Text = "Name";
-            columnHeader2.Width = 150;
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(89, 15);
+            label1.TabIndex = 18;
+            label1.Text = "Search in Users:";
             // 
-            // columnHeader3
+            // label4
             // 
-            columnHeader3.Text = "Description";
-            columnHeader3.Width = 200;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(12, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(79, 30);
+            label4.TabIndex = 32;
+            label4.Text = "Admin";
             // 
-            // txtSearchWorkType
+            // btnUpdateWorkType
             // 
-            txtSearchWorkType.Location = new Point(1118, 6);
-            txtSearchWorkType.Name = "txtSearchWorkType";
-            txtSearchWorkType.Size = new Size(129, 23);
-            txtSearchWorkType.TabIndex = 14;
-            txtSearchWorkType.TextChanged += txtSearchWorkType_TextChanged;
+            btnUpdateWorkType.Location = new Point(1406, 48);
+            btnUpdateWorkType.Name = "btnUpdateWorkType";
+            btnUpdateWorkType.Size = new Size(75, 23);
+            btnUpdateWorkType.TabIndex = 33;
+            btnUpdateWorkType.Text = "Update";
+            btnUpdateWorkType.UseVisualStyleBackColor = true;
+            btnUpdateWorkType.Click += btnUpdateWorkType_Click;
             // 
-            // label3
+            // btnUpdateEmployees
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(999, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(113, 15);
-            label3.TabIndex = 13;
-            label3.Text = "Search in WorkType:";
+            btnUpdateEmployees.Location = new Point(825, 49);
+            btnUpdateEmployees.Name = "btnUpdateEmployees";
+            btnUpdateEmployees.Size = new Size(75, 23);
+            btnUpdateEmployees.TabIndex = 34;
+            btnUpdateEmployees.Text = "Update";
+            btnUpdateEmployees.UseVisualStyleBackColor = true;
+            btnUpdateEmployees.Click += btnUpdateEmployees_Click;
             // 
-            // btnCreateWorkType
+            // btnUpdateUser
             // 
-            btnCreateWorkType.Location = new Point(1253, 6);
-            btnCreateWorkType.Name = "btnCreateWorkType";
-            btnCreateWorkType.Size = new Size(75, 23);
-            btnCreateWorkType.TabIndex = 16;
-            btnCreateWorkType.Text = "Create";
-            btnCreateWorkType.UseVisualStyleBackColor = true;
-            btnCreateWorkType.Click += btnCreateWorkType_Click;
-            // 
-            // btnDeleteWorkType
-            // 
-            btnDeleteWorkType.Location = new Point(1334, 5);
-            btnDeleteWorkType.Name = "btnDeleteWorkType";
-            btnDeleteWorkType.Size = new Size(75, 23);
-            btnDeleteWorkType.TabIndex = 17;
-            btnDeleteWorkType.Text = "Delete";
-            btnDeleteWorkType.UseVisualStyleBackColor = true;
-            btnDeleteWorkType.Click += btnDeleteWorkType_Click;
+            btnUpdateUser.Location = new Point(242, 49);
+            btnUpdateUser.Name = "btnUpdateUser";
+            btnUpdateUser.Size = new Size(75, 23);
+            btnUpdateUser.TabIndex = 35;
+            btnUpdateUser.Text = "Update";
+            btnUpdateUser.UseVisualStyleBackColor = true;
+            btnUpdateUser.Click += btnUpdateUser_Click;
             // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1447, 439);
+            ClientSize = new Size(1492, 484);
+            Controls.Add(btnUpdateUser);
+            Controls.Add(btnUpdateEmployees);
+            Controls.Add(btnUpdateWorkType);
+            Controls.Add(label4);
             Controls.Add(btnDeleteWorkType);
             Controls.Add(btnCreateWorkType);
             Controls.Add(listViewWorkType);
@@ -280,13 +324,18 @@
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private TextBox txtSearchEmployee;
-        private TextBox txtSearchUser;
-        private Button btnCreateEmployee;
-        private Button btnDeleteEmployee;
-        private Button btnLogout;
+        private Button btnDeleteWorkType;
+        private Button btnCreateWorkType;
+        private ListView listViewWorkType;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private TextBox txtSearchWorkType;
+        private Label label3;
+        private ListView listViewUsers;
+        private ColumnHeader UserId;
+        private ColumnHeader UserName;
+        private ColumnHeader UserRole;
         private ListView listViewEmployees;
         private ColumnHeader EmployeeId;
         private ColumnHeader EmployeeFirstName;
@@ -294,17 +343,16 @@
         private ColumnHeader EmployeeBirthDate;
         private ColumnHeader EmployeeEmail;
         private ColumnHeader EmployeePhone;
-        private ListView listViewUsers;
-        private ColumnHeader UserId;
-        private ColumnHeader UserName;
-        private ColumnHeader UserRole;
-        private ListView listViewWorkType;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
-        private TextBox txtSearchWorkType;
-        private Label label3;
-        private Button btnCreateWorkType;
-        private Button btnDeleteWorkType;
+        private Button btnLogout;
+        private Button btnDeleteEmployee;
+        private Button btnCreateEmployee;
+        private TextBox txtSearchUser;
+        private TextBox txtSearchEmployee;
+        private Label label2;
+        private Label label1;
+        private Label label4;
+        private Button btnUpdateWorkType;
+        private Button btnUpdateEmployees;
+        private Button btnUpdateUser;
     }
 }

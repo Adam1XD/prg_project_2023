@@ -22,8 +22,8 @@ namespace prg_project_2023
         {
             InitializeComponent();
             sqlRepo = new SqlRepo();
-
             LoadEmployee();
+            LoadWorkType();
         }
         public void LoadWorkType()
         {
@@ -35,13 +35,6 @@ namespace prg_project_2023
                 listViewWorkType.Items.Add(worktype.ToListViewItem());
             }
         }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            LoginForm login = new();
-            login.Show();
-        }
         public void LoadEmployee()
         {
             employees = sqlRepo.GetEmployees(txtSearchEmployee.Text);
@@ -52,17 +45,20 @@ namespace prg_project_2023
                 listViewEmployee.Items.Add(employee.ToListViewItem());
             }
         }
-
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm login = new();
+            login.Show();
+        }
         private void txtSearchEmployee_TextChanged(object sender, EventArgs e)
         {
             LoadEmployee();
         }
-
         private void txtSearchWorkType_TextChanged(object sender, EventArgs e)
         {
             LoadWorkType();
         }
-
         private void btnCreateWorkType_Click(object sender, EventArgs e)
         {
             AddWorkTypeForm addWorkType = new();
@@ -70,7 +66,6 @@ namespace prg_project_2023
             if (result == DialogResult.OK)
                 LoadWorkType();
         }
-
         private void btnDeleteWorkType_Click(object sender, EventArgs e)
         {
             var row = listViewWorkType.SelectedItems[0];
@@ -79,6 +74,14 @@ namespace prg_project_2023
             listViewWorkType.SelectedItems[0].Remove();
 
             LoadWorkType();
+        }
+
+        private void btnUpdateWorkType_Click(object sender, EventArgs e)
+        {
+            UpdateWorkTypeForm updateWorkType = new UpdateWorkTypeForm();
+            var result = updateWorkType.ShowDialog();
+            if (result == DialogResult.OK)
+                LoadWorkType();
         }
     }
 }

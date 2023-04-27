@@ -34,7 +34,7 @@
             label3 = new Label();
             txtPassword = new TextBox();
             label2 = new Label();
-            txtUsename = new TextBox();
+            txtUsername = new TextBox();
             label1 = new Label();
             checkbxShowPass = new CheckBox();
             SuspendLayout();
@@ -97,13 +97,13 @@
             label2.TabIndex = 14;
             label2.Text = "Usename";
             // 
-            // txtUsename
+            // txtUsername
             // 
-            txtUsename.Location = new Point(28, 147);
-            txtUsename.Multiline = true;
-            txtUsename.Name = "txtUsename";
-            txtUsename.Size = new Size(216, 28);
-            txtUsename.TabIndex = 13;
+            txtUsername.Location = new Point(28, 147);
+            txtUsername.Multiline = true;
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(216, 28);
+            txtUsername.TabIndex = 13;
             // 
             // label1
             // 
@@ -140,7 +140,7 @@
             Controls.Add(label3);
             Controls.Add(txtPassword);
             Controls.Add(label2);
-            Controls.Add(txtUsename);
+            Controls.Add(txtUsername);
             Controls.Add(label1);
             Name = "LoginForm";
             Text = "LoginForm";
@@ -156,7 +156,7 @@
         private Label label3;
         private TextBox txtPassword;
         private Label label2;
-        private TextBox txtUsename;
+        private TextBox txtUsername;
         private Label label1;
         private CheckBox checkbxShowPass;
     }

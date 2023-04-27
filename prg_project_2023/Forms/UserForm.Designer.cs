@@ -40,27 +40,28 @@
             txtSearchEmployee = new TextBox();
             label2 = new Label();
             listViewWorkType = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
+            IdWorkType = new ColumnHeader();
+            NameWorkType = new ColumnHeader();
+            DescriptionWorkType = new ColumnHeader();
             txtSearchWorkType = new TextBox();
             label3 = new Label();
             btnDeleteWorkType = new Button();
             btnCreateWorkType = new Button();
+            btnUpdateWorkType = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(277, 15);
+            label1.Location = new Point(12, 62);
             label1.Name = "label1";
-            label1.Size = new Size(45, 15);
+            label1.Size = new Size(105, 15);
             label1.TabIndex = 0;
-            label1.Text = "Search:";
+            label1.Text = "Search Employees:";
             // 
             // btnLogout
             // 
-            btnLogout.Location = new Point(1142, 415);
+            btnLogout.Location = new Point(1016, 462);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(75, 23);
             btnLogout.TabIndex = 1;
@@ -73,9 +74,9 @@
             listViewEmployee.Columns.AddRange(new ColumnHeader[] { Id, FirstName, Surname, BirthDate, Email, Phone });
             listViewEmployee.FullRowSelect = true;
             listViewEmployee.GridLines = true;
-            listViewEmployee.Location = new Point(12, 41);
+            listViewEmployee.Location = new Point(12, 88);
             listViewEmployee.Name = "listViewEmployee";
-            listViewEmployee.Size = new Size(776, 368);
+            listViewEmployee.Size = new Size(557, 368);
             listViewEmployee.TabIndex = 2;
             listViewEmployee.UseCompatibleStateImageBehavior = false;
             listViewEmployee.View = View.Details;
@@ -112,61 +113,61 @@
             // 
             // txtSearchEmployee
             // 
-            txtSearchEmployee.Location = new Point(328, 12);
+            txtSearchEmployee.Location = new Point(123, 59);
             txtSearchEmployee.Name = "txtSearchEmployee";
-            txtSearchEmployee.Size = new Size(100, 23);
+            txtSearchEmployee.Size = new Size(154, 23);
             txtSearchEmployee.TabIndex = 3;
             txtSearchEmployee.TextChanged += txtSearchEmployee_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(12, 10);
             label2.Name = "label2";
-            label2.Size = new Size(44, 21);
+            label2.Size = new Size(56, 30);
             label2.TabIndex = 4;
             label2.Text = "User";
             // 
             // listViewWorkType
             // 
-            listViewWorkType.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            listViewWorkType.Columns.AddRange(new ColumnHeader[] { IdWorkType, NameWorkType, DescriptionWorkType });
             listViewWorkType.FullRowSelect = true;
             listViewWorkType.GridLines = true;
-            listViewWorkType.Location = new Point(807, 41);
+            listViewWorkType.Location = new Point(575, 88);
             listViewWorkType.Name = "listViewWorkType";
-            listViewWorkType.Size = new Size(410, 368);
+            listViewWorkType.Size = new Size(516, 368);
             listViewWorkType.TabIndex = 18;
             listViewWorkType.UseCompatibleStateImageBehavior = false;
             listViewWorkType.View = View.Details;
             // 
-            // columnHeader1
+            // IdWorkType
             // 
-            columnHeader1.Text = "Id";
-            columnHeader1.Width = 75;
+            IdWorkType.Text = "Id";
+            IdWorkType.Width = 75;
             // 
-            // columnHeader2
+            // NameWorkType
             // 
-            columnHeader2.Text = "Name";
-            columnHeader2.Width = 150;
+            NameWorkType.Text = "Name";
+            NameWorkType.Width = 150;
             // 
-            // columnHeader3
+            // DescriptionWorkType
             // 
-            columnHeader3.Text = "Description";
-            columnHeader3.Width = 200;
+            DescriptionWorkType.Text = "Description";
+            DescriptionWorkType.Width = 280;
             // 
             // txtSearchWorkType
             // 
-            txtSearchWorkType.Location = new Point(926, 12);
+            txtSearchWorkType.Location = new Point(694, 60);
             txtSearchWorkType.Name = "txtSearchWorkType";
-            txtSearchWorkType.Size = new Size(129, 23);
+            txtSearchWorkType.Size = new Size(154, 23);
             txtSearchWorkType.TabIndex = 17;
             txtSearchWorkType.TextChanged += txtSearchWorkType_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(807, 15);
+            label3.Location = new Point(575, 63);
             label3.Name = "label3";
             label3.Size = new Size(113, 15);
             label3.TabIndex = 16;
@@ -174,7 +175,7 @@
             // 
             // btnDeleteWorkType
             // 
-            btnDeleteWorkType.Location = new Point(1142, 11);
+            btnDeleteWorkType.Location = new Point(935, 60);
             btnDeleteWorkType.Name = "btnDeleteWorkType";
             btnDeleteWorkType.Size = new Size(75, 23);
             btnDeleteWorkType.TabIndex = 20;
@@ -184,7 +185,7 @@
             // 
             // btnCreateWorkType
             // 
-            btnCreateWorkType.Location = new Point(1061, 12);
+            btnCreateWorkType.Location = new Point(854, 60);
             btnCreateWorkType.Name = "btnCreateWorkType";
             btnCreateWorkType.Size = new Size(75, 23);
             btnCreateWorkType.TabIndex = 19;
@@ -192,11 +193,22 @@
             btnCreateWorkType.UseVisualStyleBackColor = true;
             btnCreateWorkType.Click += btnCreateWorkType_Click;
             // 
+            // btnUpdateWorkType
+            // 
+            btnUpdateWorkType.Location = new Point(1016, 59);
+            btnUpdateWorkType.Name = "btnUpdateWorkType";
+            btnUpdateWorkType.Size = new Size(75, 23);
+            btnUpdateWorkType.TabIndex = 21;
+            btnUpdateWorkType.Text = "Update";
+            btnUpdateWorkType.UseVisualStyleBackColor = true;
+            btnUpdateWorkType.Click += btnUpdateWorkType_Click;
+            // 
             // UserForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1232, 445);
+            ClientSize = new Size(1103, 497);
+            Controls.Add(btnUpdateWorkType);
             Controls.Add(btnDeleteWorkType);
             Controls.Add(btnCreateWorkType);
             Controls.Add(listViewWorkType);
@@ -227,12 +239,13 @@
         private TextBox txtSearchEmployee;
         private Label label2;
         private ListView listViewWorkType;
-        private ColumnHeader columnHeader1;
-        private ColumnHeader columnHeader2;
-        private ColumnHeader columnHeader3;
+        private ColumnHeader IdWorkType;
+        private ColumnHeader NameWorkType;
+        private ColumnHeader DescriptionWorkType;
         private TextBox txtSearchWorkType;
         private Label label3;
         private Button btnDeleteWorkType;
         private Button btnCreateWorkType;
+        private Button btnUpdateWorkType;
     }
 }

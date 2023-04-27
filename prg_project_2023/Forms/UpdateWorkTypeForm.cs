@@ -11,29 +11,32 @@ using System.Windows.Forms;
 
 namespace prg_project_2023.Forms
 {
-    public partial class AddWorkTypeForm : Form
+    public partial class UpdateWorkTypeForm : Form
     {
         SqlRepo sqlRepo;
-        public AddWorkTypeForm()
+        public UpdateWorkTypeForm()
         {
             InitializeComponent();
-            sqlRepo = new();
+            sqlRepo = new SqlRepo();
         }
 
-        private void btnAddWorkType_Click(object sender, EventArgs e)
+        private void btnUpdateWorkType_Click(object sender, EventArgs e)
         {
-            if (txtName.Text != "" && txtDescription.Text != "")
+            if(txtId.Text != string.Empty ||  txtName.Text != string.Empty || txtDescription.Text != string.Empty)
             {
-                sqlRepo.AddWorkType(txtName.Text, txtDescription.Text);
+                this.Hide();
+                sqlRepo.UpdateWorkType(txtId.Text, txtName.Text, txtDescription.Text);
                 DialogResult = DialogResult.OK;
             }
             else
             {
-                MessageBox.Show("Fill every window.", "Add Failed.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fill every window", "Update Failed.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtId.Text = "";
                 txtName.Text = "";
                 txtDescription.Text = "";
-                txtName.Focus();
+                txtId.Focus();
             }
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

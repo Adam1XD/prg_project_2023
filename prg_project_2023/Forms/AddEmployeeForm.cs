@@ -29,7 +29,12 @@ namespace prg_project_2023
             }
             else
             {
-                MessageBox.Show("Fill every window.");
+                MessageBox.Show("Fill every window.", "Add Failed.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtFirstName.Text = "";
+                txtLastName.Text = "";
+                txtEmail.Text = "";
+                txtPhone.Text = "";
+                txtFirstName.Focus();
             }
         }
 

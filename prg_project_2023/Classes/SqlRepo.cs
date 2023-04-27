@@ -183,5 +183,57 @@ namespace prg_project_2023.Classes
                 sqlConnection.Close();
             }
         }
+        public void UpdateWorkType(string id, string name, string description)
+        {
+            using(SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+                using(SqlCommand cmd = sqlConnection.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE [WorkType] SET Name = @name,  Description = @description WHERE Id = @id";
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("name", name);
+                    cmd.Parameters.AddWithValue("description", description);
+                    cmd.ExecuteNonQuery();
+                }
+                sqlConnection.Close();
+            }
+        }
+        public void UpdateEmployee(string id, string firstname, string lastname, DateTime birthdate, string email, string phone)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+                using (SqlCommand cmd = sqlConnection.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE [Employee] SET FirstName = @firstname, LastName = @lastname, BirthDate = @birthdate, Email = @email, Phone = @phone WHERE EmployeeId = @employeeid";
+                    cmd.Parameters.AddWithValue("employeeid", id);
+                    cmd.Parameters.AddWithValue("firstname", firstname);
+                    cmd.Parameters.AddWithValue("lastname", lastname);
+                    cmd.Parameters.AddWithValue("birthdate", Convert.ToDateTime(birthdate));
+                    cmd.Parameters.AddWithValue("email", email);
+                    cmd.Parameters.AddWithValue("phone", phone);
+                    cmd.ExecuteNonQuery();
+                }
+                sqlConnection.Close();
+            }
+        }
+        public void UpdateUser(string id, string username, string password, string role)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+                using (SqlCommand cmd = sqlConnection.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE [Users] SET Username = @username, Password = @password, Role = @role WHERE Id = @id";
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("username", username);
+                    cmd.Parameters.AddWithValue("password", password);
+                    cmd.Parameters.AddWithValue("role", role);
+                    cmd.ExecuteNonQuery();
+                }
+                sqlConnection.Close();
+            }
+        }
     }
 }

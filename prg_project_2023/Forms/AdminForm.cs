@@ -62,29 +62,20 @@ namespace prg_project_2023
         {
             LoadUser();
         }
-
         private void txtSearchEmployee_TextChanged(object sender, EventArgs e)
         {
             LoadEmployee();
         }
-
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Hide();
             LoginForm login = new();
             login.Show();
         }
-
-        private void btnDeleteEmployee_Click(object sender, EventArgs e)
+        private void txtSearchWorkType_TextChanged(object sender, EventArgs e)
         {
-            var row = listViewEmployees.SelectedItems[0];
-            var id = row.SubItems[0].Text;
-            sqlRepo.DeleteEmployee(Convert.ToInt32(id));
-            listViewEmployees.SelectedItems[0].Remove();
-
-            LoadEmployee();
+            LoadWorkType();
         }
-
         private void btnCreateEmployee_Click(object sender, EventArgs e)
         {
             AddEmployeeForm addEmployee = new();
@@ -92,12 +83,6 @@ namespace prg_project_2023
             if (result == DialogResult.OK)
                 LoadEmployee();
         }
-
-        private void txtSearchWorkType_TextChanged(object sender, EventArgs e)
-        {
-            LoadWorkType();
-        }
-
         private void btnCreateWorkType_Click(object sender, EventArgs e)
         {
             AddWorkTypeForm addWorkType = new();
@@ -105,14 +90,41 @@ namespace prg_project_2023
             if (result == DialogResult.OK)
                 LoadWorkType();
         }
-
+        private void btnUpdateWorkType_Click(object sender, EventArgs e)
+        {
+            UpdateWorkTypeForm updateWorkType = new UpdateWorkTypeForm();
+            var result = updateWorkType.ShowDialog();
+            if (result == DialogResult.OK)
+                LoadWorkType();
+        }
+        private void btnUpdateEmployees_Click(object sender, EventArgs e)
+        {
+            UpdateEmployeeForm updateEmployee = new UpdateEmployeeForm();
+            var result = updateEmployee.ShowDialog();
+            if (result == DialogResult.OK)
+                LoadEmployee();
+        }
+        private void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+            UpdateUserForm userEmployee = new UpdateUserForm();
+            var result = userEmployee.ShowDialog();
+            if (result == DialogResult.OK)
+                LoadUser();
+        }
+        private void btnDeleteEmployee_Click(object sender, EventArgs e)
+        {
+            var row = listViewEmployees.SelectedItems[0];
+            var id = row.SubItems[0].Text;
+            sqlRepo.DeleteEmployee(Convert.ToInt32(id));
+            listViewEmployees.SelectedItems[0].Remove();
+            LoadEmployee();
+        }
         private void btnDeleteWorkType_Click(object sender, EventArgs e)
         {
             var row = listViewWorkType.SelectedItems[0];
             var id = row.SubItems[0].Text;
             sqlRepo.DeleteWorkType(Convert.ToInt32(id));
             listViewWorkType.SelectedItems[0].Remove();
-
             LoadWorkType();
         }
     }

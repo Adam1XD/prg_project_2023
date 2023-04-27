@@ -20,10 +20,9 @@ namespace prg_project_2023
         {
             InitializeComponent();
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            User user = sqlRepo.Login(txtUsename.Text, txtPassword.Text);
+            User user = sqlRepo.Login(txtUsername.Text, txtPassword.Text);
 
             if (user != null)
             {
@@ -42,19 +41,17 @@ namespace prg_project_2023
             else
             {
                 MessageBox.Show("Invalid Username or Password. Please Try Again.", "Login Failed.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtUsename.Text = "";
+                txtUsername.Text = "";
                 txtPassword.Text = "";
-                txtUsename.Focus();
+                txtUsername.Focus();
             }
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtUsename.Text = "";
+            txtUsername.Text = "";
             txtPassword.Text = "";
-            txtUsename.Focus();
+            txtUsername.Focus();
         }
-
         private void checkbxShowPass_CheckedChanged(object sender, EventArgs e)
         {
             if (checkbxShowPass.Checked == true)
@@ -66,7 +63,6 @@ namespace prg_project_2023
                 txtPassword.PasswordChar = '•';
             }
         }
-
         private void label5_Click(object sender, EventArgs e)
         {
             new RegisterForm().Show();
