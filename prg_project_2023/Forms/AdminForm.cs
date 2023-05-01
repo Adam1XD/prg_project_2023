@@ -58,24 +58,6 @@ namespace prg_project_2023
                 listViewWorkType.Items.Add(worktype.ToListViewItem());
             }
         }
-        private void txtSearchUser_TextChanged(object sender, EventArgs e)
-        {
-            LoadUser();
-        }
-        private void txtSearchEmployee_TextChanged(object sender, EventArgs e)
-        {
-            LoadEmployee();
-        }
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            LoginForm login = new();
-            login.Show();
-        }
-        private void txtSearchWorkType_TextChanged(object sender, EventArgs e)
-        {
-            LoadWorkType();
-        }
         private void btnCreateEmployee_Click(object sender, EventArgs e)
         {
             AddEmployeeForm addEmployee = new();
@@ -113,6 +95,12 @@ namespace prg_project_2023
         }
         private void btnDeleteEmployee_Click(object sender, EventArgs e)
         {
+            if (listViewEmployees.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select row to delete.", "Delete failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnDeleteEmployee.Focus();
+                return;
+            }
             var row = listViewEmployees.SelectedItems[0];
             var id = row.SubItems[0].Text;
             sqlRepo.DeleteEmployee(Convert.ToInt32(id));
@@ -121,11 +109,36 @@ namespace prg_project_2023
         }
         private void btnDeleteWorkType_Click(object sender, EventArgs e)
         {
+            if (listViewWorkType.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select row to delete.", "Delete failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnDeleteWorkType.Focus();
+                return;
+            }
             var row = listViewWorkType.SelectedItems[0];
             var id = row.SubItems[0].Text;
             sqlRepo.DeleteWorkType(Convert.ToInt32(id));
             listViewWorkType.SelectedItems[0].Remove();
             LoadWorkType();
+        }
+        private void txtSearchWorkType_TextChanged(object sender, EventArgs e)
+        {
+            LoadWorkType();
+        }
+        private void txtSearchEmployee_TextChanged(object sender, EventArgs e)
+        {
+            LoadEmployee();
+        }
+        private void txtSearchUser_TextChanged(object sender, EventArgs e)
+        {
+            LoadUser();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm login = new();
+            login.Show();
         }
     }
 }

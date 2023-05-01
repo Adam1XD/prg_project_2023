@@ -113,6 +113,7 @@
             txtSearchWorkType.Name = "txtSearchWorkType";
             txtSearchWorkType.Size = new Size(153, 23);
             txtSearchWorkType.TabIndex = 28;
+            txtSearchWorkType.TextChanged += txtSearchWorkType_TextChanged;
             // 
             // label3
             // 
@@ -200,6 +201,7 @@
             btnLogout.TabIndex = 24;
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += btnLogout_Click;
             // 
             // btnDeleteEmployee
             // 
@@ -227,6 +229,7 @@
             txtSearchUser.Name = "txtSearchUser";
             txtSearchUser.Size = new Size(129, 23);
             txtSearchUser.TabIndex = 21;
+            txtSearchUser.TextChanged += txtSearchUser_TextChanged;
             // 
             // txtSearchEmployee
             // 
@@ -234,6 +237,7 @@
             txtSearchEmployee.Name = "txtSearchEmployee";
             txtSearchEmployee.Size = new Size(129, 23);
             txtSearchEmployee.TabIndex = 20;
+            txtSearchEmployee.TextChanged += txtSearchEmployee_TextChanged;
             // 
             // label2
             // 

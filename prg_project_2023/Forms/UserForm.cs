@@ -68,6 +68,12 @@ namespace prg_project_2023
         }
         private void btnDeleteWorkType_Click(object sender, EventArgs e)
         {
+            if (listViewWorkType.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Select row to delete.", "Delete failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnDeleteWorkType.Focus();
+                return;
+            }
             var row = listViewWorkType.SelectedItems[0];
             var id = row.SubItems[0].Text;
             sqlRepo.DeleteWorkType(Convert.ToInt32(id));
@@ -75,7 +81,6 @@ namespace prg_project_2023
 
             LoadWorkType();
         }
-
         private void btnUpdateWorkType_Click(object sender, EventArgs e)
         {
             UpdateWorkTypeForm updateWorkType = new UpdateWorkTypeForm();
